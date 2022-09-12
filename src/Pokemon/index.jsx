@@ -6,13 +6,18 @@ import {
 	useCurrentFrame,
 	useVideoConfig,
 } from 'remotion';
-import {Logo} from './HelloWorld/Logo';
-import {Subtitle} from './HelloWorld/Subtitle';
-import {Title} from './HelloWorld/Title';
+import { Title } from './Title';
 
-export const HelloWorld = ({titleText, titleColor}) => {
+export const HelloWorld = () => {
 	const frame = useCurrentFrame();
 	const {durationInFrames, fps} = useVideoConfig();
+
+	const titleText = "TODAS AS CARTAS DA NOVA COLEÇÃO";
+	const subtitleText = "LINHA DO MAGCARGO";
+	const textColor = "black";
+
+	const topTitle = 0;
+	const topSubtitle = 1500;
 
 	// Animate from 0 to 1 after 25 frames
 	const logoTranslationProgress = spring({
@@ -22,13 +27,6 @@ export const HelloWorld = ({titleText, titleColor}) => {
 			damping: 100,
 		},
 	});
-
-	// Move the logo up by 150 pixels once the transition starts
-	const logoTranslation = interpolate(
-		logoTranslationProgress,
-		[0, 1],
-		[0, -150]
-	);
 
 	// Fade out the animation at the end
 	const opacity = interpolate(
@@ -45,16 +43,13 @@ export const HelloWorld = ({titleText, titleColor}) => {
 	return (
 		<AbsoluteFill style={{backgroundColor: 'white'}}>
 			<AbsoluteFill style={{opacity}}>
-				<AbsoluteFill style={{transform: `translateY(${logoTranslation}px)`}}>
-					<Logo />
-				</AbsoluteFill>
 				{/* Sequences can shift the time for its children! */}
 				<Sequence from={35}>
-					<Title titleText={titleText} titleColor={titleColor} />
+					<Title titleText={titleText} titleColor={textColor} top={topTitle}/>
 				</Sequence>
 				{/* The subtitle will only enter on the 75th frame. */}
 				<Sequence from={75}>
-					<Subtitle />
+					<Title titleText={subtitleText} titleColor={textColor} top={topSubtitle}/>
 				</Sequence>
 			</AbsoluteFill>
 		</AbsoluteFill>
