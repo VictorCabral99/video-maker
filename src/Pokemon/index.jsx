@@ -7,17 +7,25 @@ import {
 	useVideoConfig,
 } from 'remotion';
 import { Title } from './Title';
+import { Logo } from './Logo';
+import imgLogo from '../shared/img/logo.png';
+import WP from '../shared/img/wp/Magcargo.png';
 
 export const HelloWorld = () => {
 	const frame = useCurrentFrame();
 	const {durationInFrames, fps} = useVideoConfig();
 
-	const titleText = "TODAS AS CARTAS DA NOVA COLEÇÃO";
-	const subtitleText = "LINHA DO MAGCARGO";
-	const textColor = "black";
+	const titleText = "TODAS AS CARTAS DA COLEÇÃO";
+	const subtitleText = "Linha evolutiva do";
+	const pokemonName = "Magcargo";
+	const textColor = "white";
 
 	const topTitle = 0;
-	const topSubtitle = 1500;
+	const topSubtitle = 1400;
+	const topPokemonName = 1500;
+
+	const fontSize1 = 150;
+	const fontSize2 = 100;
 
 	// Animate from 0 to 1 after 25 frames
 	const logoTranslationProgress = spring({
@@ -41,15 +49,19 @@ export const HelloWorld = () => {
 
 	// A <AbsoluteFill> is just a absolutely positioned <div>!
 	return (
-		<AbsoluteFill style={{backgroundColor: 'white'}}>
+		<AbsoluteFill style={{backgroundImage: `url(${WP})`}}>
 			<AbsoluteFill style={{opacity}}>
-				{/* Sequences can shift the time for its children! */}
-				<Sequence from={35}>
-					<Title titleText={titleText} titleColor={textColor} top={topTitle}/>
+				<Sequence from={15}>
+					<Title titleText={titleText} titleColor={textColor} top={topTitle} fontSize={fontSize1}/>
 				</Sequence>
-				{/* The subtitle will only enter on the 75th frame. */}
-				<Sequence from={75}>
-					<Title titleText={subtitleText} titleColor={textColor} top={topSubtitle}/>
+				<Sequence from={40}>
+					<Logo src={imgLogo}></Logo>
+				</Sequence>
+				<Sequence from={65}>
+					<Title titleText={subtitleText} titleColor={textColor} top={topSubtitle} fontSize={fontSize2}/>
+				</Sequence>
+				<Sequence from={80}>
+					<Title titleText={pokemonName} titleColor={textColor} top={topPokemonName} fontSize={fontSize1}/>
 				</Sequence>
 			</AbsoluteFill>
 		</AbsoluteFill>

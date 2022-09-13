@@ -5,7 +5,7 @@ import { FONT_FAMILY } from '../shared/constant';
 const title = {
 	fontFamily: FONT_FAMILY,
 	fontWeight: 'bold',
-	fontSize: 100,
+	fontSize: 150,
 	textAlign: 'center',
 	position: 'absolute',
 	width: '100%',
@@ -17,7 +17,7 @@ const word = {
 	display: 'inline-block',
 };
 
-export const Title = ({titleText, titleColor, top}) => {
+export const Title = ({titleText, titleColor, top, fontSize }) => {
 	const videoConfig = useVideoConfig();
 	const frame = useCurrentFrame();
 
@@ -26,7 +26,8 @@ export const Title = ({titleText, titleColor, top}) => {
 	return (
 		<h1 style={{
 			...title,
-			top: top
+			top: top,
+			fontSize: fontSize
 			}}>
 			{words.map((t, i) => {
 				const delay = i * 5;
