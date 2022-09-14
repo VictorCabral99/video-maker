@@ -1,17 +1,11 @@
-import {spring} from 'remotion';
-import {
-	AbsoluteFill,
-	interpolate,
-	Sequence,
-	useCurrentFrame,
-	useVideoConfig,
-} from 'remotion';
-import { Title } from './Title';
-import { Logo } from './Logo';
-import imgLogo from '../shared/img/logo.png';
-import WP from '../shared/img/wp/Magcargo.png';
+import { spring, AbsoluteFill, interpolate, Sequence, useCurrentFrame, useVideoConfig } from 'remotion';
+import { Title } from '../../shared/components/Title';
+import { Logo } from '../../shared/components/Logo';
 
-export const HelloWorld = () => {
+import imgLogo from '../../assets/img/logo.png';
+import WP from '../../assets/img/wp/Magcargo.png';
+
+export const Opening = () => {
 	const frame = useCurrentFrame();
 	const {durationInFrames, fps} = useVideoConfig();
 
@@ -54,13 +48,13 @@ export const HelloWorld = () => {
 				<Sequence from={15}>
 					<Title titleText={titleText} titleColor={textColor} top={topTitle} fontSize={fontSize1}/>
 				</Sequence>
-				<Sequence from={40}>
-					<Logo src={imgLogo}></Logo>
+				<Sequence from={30}>
+					<Logo src={imgLogo} top={800}></Logo>
 				</Sequence>
-				<Sequence from={65}>
+				<Sequence from={45}>
 					<Title titleText={subtitleText} titleColor={textColor} top={topSubtitle} fontSize={fontSize2}/>
 				</Sequence>
-				<Sequence from={80}>
+				<Sequence from={60}>
 					<Title titleText={pokemonName} titleColor={textColor} top={topPokemonName} fontSize={fontSize1}/>
 				</Sequence>
 			</AbsoluteFill>

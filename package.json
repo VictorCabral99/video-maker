@@ -4,7 +4,10 @@
   "description": "My Remotion video",
   "scripts": {
     "start": "remotion preview src/index.jsx",
-    "build": "remotion render src/index.jsx HelloWorld out/video.mp4",
+    "build-opening": "remotion render src/index.jsx Opening out/opening.mp4",
+    "build-carrosel": "remotion render src/index.jsx Carrosel out/carrosel.mp4",
+    "build-combos": "remotion render src/index.jsx Combos out/combos.mp4",
+    "build-ending": "remotion render src/index.jsx Ending out/ending.mp4",
     "upgrade": "remotion upgrade",
     "test": "eslint src --ext ts,tsx,js,jsx"
   },

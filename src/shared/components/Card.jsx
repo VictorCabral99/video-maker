@@ -1,19 +1,16 @@
 import React from 'react';
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import { Img } from "remotion";
+import { spring, useCurrentFrame, useVideoConfig, Img} from 'remotion';
 
 const image = {
 	position: 'absolute',
   left: '5%',
 	width: '90%',
-  top: 800
+  top: 500
 };
 
-export const Logo = ({src}) => {
+export const Card = ({src}) => {
   const videoConfig = useVideoConfig();
 	const frame = useCurrentFrame();
-
-  let delay = 0;
 
   const scale = spring({
     fps: videoConfig.fps,
@@ -25,16 +22,14 @@ export const Logo = ({src}) => {
   const size = spring({
     fps: videoConfig.fps,
     frame: frame,
-    from: 0,
-    to: 90
+    from: -85,
+    to: 5
   })
 
   return (
     <Img style={{
       ...image,
-      transform: `rotateY(${scale}deg)`,
-      width: `${size}%`,
-      left: `${(100-size)/2}%`
+      left: `${size}%`
     }} src={src}></Img>
   )
 } 

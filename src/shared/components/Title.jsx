@@ -1,6 +1,6 @@
 import React from 'react';
 import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import { FONT_FAMILY } from '../shared/constant';
+import { FONT_FAMILY } from '../../assets/text/constant';
 
 const title = {
 	fontFamily: FONT_FAMILY,
