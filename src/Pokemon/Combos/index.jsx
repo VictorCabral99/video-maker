@@ -1,7 +1,8 @@
 import { spring, AbsoluteFill, interpolate, Sequence, useCurrentFrame, useVideoConfig } from 'remotion';
 
 import { Logo } from '../../shared/components/Logo';
-import { Card } from '../../shared/components/Card';
+import { Combo } from '../../shared/components/Combo';
+import { Title } from '../../shared/components/Title';
 
 import imgLogo from '../../assets/img/logo.png';
 
@@ -30,11 +31,14 @@ export const Combos = () => {
 				<Sequence from={15}>
           <Logo src={imgLogo} top={50}></Logo>
 				</Sequence>
+				<Sequence from={20}>
+					<Title titleText="Apoios" titleColor="black" top={260} fontSize={120}></Title>
+				</Sequence>
         {
           images.map((url, idx)=>{
             return (
               <Sequence from={(300 * idx) + 30}>
-                <Card src={url}></Card>
+                <Combo src={url}></Combo>
               </Sequence>
             )
           })
