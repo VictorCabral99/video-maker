@@ -4,7 +4,7 @@ import global from '../global.constant';
 
 import { Logo, Title } from '../shared/components';
 
-export const Abertura = () => {
+export const Abertura = ({ timer }) => {
 
   const logo = global.images.logo;
   
@@ -22,18 +22,23 @@ export const Abertura = () => {
   const topPokemonName = global.top.topPokemonName;
   const topCentralLogo = global.top.topCentralLogo;
 
+  const titleTime = 15;
+  const logoTime = 30;
+  const subtitleTime = 45;
+  const pokemonNameTime = 60;
+
   return (
     <>
-      <Sequence from={15} durationInFrames={135}>
+      <Sequence from={titleTime} durationInFrames={timer - titleTime}>
 				<Title titleText={titleText} titleColor={textColor} top={topTitle} fontSize={fontSize1}/>
 			</Sequence>
-      <Sequence from={30} durationInFrames={120}>
+      <Sequence from={logoTime} durationInFrames={timer - logoTime}>
         <Logo src={logo} top={topCentralLogo}></Logo>
       </Sequence>
-      <Sequence from={45} durationInFrames={105}>
+      <Sequence from={subtitleTime} durationInFrames={timer - subtitleTime}>
         <Title titleText={subtitleText} titleColor={textColor} top={topSubtitle} fontSize={fontSize2}/>
       </Sequence>
-      <Sequence from={60} durationInFrames={90}>
+      <Sequence from={pokemonNameTime} durationInFrames={timer - pokemonNameTime}>
         <Title titleText={pokemonName} titleColor={textColor} top={topPokemonName} fontSize={fontSize1}/>
       </Sequence>
     </>
