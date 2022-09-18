@@ -11,16 +11,16 @@ export const Combos = ({timer, init}) => {
 
   return (
     <>
-      <Sequence from={init} durationInFrames={300 * (images.length)}>
+      <Sequence from={init} durationInFrames={150 * (images.length)}>
         <Logo src={logo} top={50}></Logo>
       </Sequence>
-      <Sequence from={init} durationInFrames={300 * (images.length)}>
+      <Sequence from={init} durationInFrames={150 * (images.length)}>
         <Title titleText="Apoios" titleColor="black" top={260} fontSize={120}></Title>
       </Sequence>
       {
         images.map((url, idx)=>{
           return (
-            <Sequence from={init + (300 * idx)} durationInFrames={300 * (images.length - idx)}>
+            <Sequence from={init + (150 * idx)} durationInFrames={150 * (images.length - idx)}>
               <Combo src={url}></Combo>
             </Sequence>
           )

@@ -1,17 +1,19 @@
 import logo from './assets/img/logo.png';
-import WP from './assets/img/wp/Magcargo.png';
+import WP from './assets/img/wp/Current-WP.png';
 
-import img1 from './assets/img/collection/021-022/021.png';
-import img2 from './assets/img/collection/021-022/022.png';
+import img1 from './assets/img/collection/024 - 026/024.png';
+import img2 from './assets/img/collection/024 - 026/025.png';
+import img3 from './assets/img/collection/024 - 026/026.png';
+import img4 from './assets/img/collection/024 - 026/221.png';
 
-import support1 from './assets/img/support/021-022/163.png';
-import support2 from './assets/img/support/021-022/079.png';
-import support3 from './assets/img/support/021-022/Coalossal.png';
-import support4 from './assets/img/support/021-022/Ursaluna.png';
+import support1 from './assets/img/support/024 - 026/4.png';
+import support2 from './assets/img/support/024 - 026/6.png';
+import support3 from './assets/img/support/024 - 026/5.png';
+import support4 from './assets/img/support/024 - 026/7.png';
 
 const global = {
   color: {
-    textColor: 'white'
+    textColor: 'black'
   },
   fontSize: {
     fontSize1: 150,
@@ -19,15 +21,15 @@ const global = {
   },
   images: {
     logo: logo,
-    main: img2,
-    carrosel: [img1, img2],
-    support: [support1, support2, support3, support4],
+    main: img4,
+    carrosel: [img1,img2,img3,img4],
+    support: [support1,support2,support3,support4],
     wallpaper: WP
   },
   text: {
     titleText: 'TODAS AS CARTAS DA COLEÇÃO',
-    subtitleText: 'Linha evolutiva do',
-    pokemonName: 'Magcargo'
+    subtitleText: 'Linha evolutiva do', // 'Apresentando', //
+    pokemonName: 'Chandelure'
   },
   top: {
     topTitle: 0,

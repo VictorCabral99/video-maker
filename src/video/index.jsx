@@ -26,16 +26,16 @@ export const Main = () => {
 		: { backgroundColor: 'white' }
 
 	const aberturaTime = 150;
-	const carroselTime = aberturaTime + (300 * global.images.carrosel.length);
-	const combosTime = carroselTime + (300 * global.images.support.length);
-	const fechamentoTime = combosTime + 300;
+	const carroselTime = aberturaTime + (150 * global.images.carrosel.length);
+	const combosTime = carroselTime + (150 * global.images.support.length);
+	const fechamentoTime = combosTime + 150;
 
 	return (
 		<AbsoluteFill style={background}>
 			<AbsoluteFill style={{opacity}}>
 				<Abertura timer={aberturaTime}></Abertura>
 				<Carrosel timer={carroselTime} init={aberturaTime}></Carrosel>
-				<Combos timer={combosTime} init={carroselTime}></Combos>
+				{ global.images.support.length > 0 && (<Combos timer={combosTime} init={carroselTime}></Combos>) }
 				<Fechamento timer={fechamentoTime} init={combosTime}></Fechamento>
 			</AbsoluteFill>
 		</AbsoluteFill>

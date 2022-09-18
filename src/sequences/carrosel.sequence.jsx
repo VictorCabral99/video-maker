@@ -17,7 +17,7 @@ export const Carrosel = ({ timer, init }) => {
       {
         images.map((url, idx)=>{
           return (
-            <Sequence from={init + (300 * idx)} durationInFrames={(300 * (images.length - idx))}>
+            <Sequence from={init + (150 * idx)} durationInFrames={(150 * (images.length - idx))}>
               <Card src={url}></Card>
             </Sequence>
           )

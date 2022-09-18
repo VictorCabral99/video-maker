@@ -7,7 +7,7 @@ export const RemotionVideo = () => {
 			<Composition
 				id="Main"
 				component={Main}
-				durationInFrames={2250}
+				durationInFrames={1500}
 				fps={30}
 				width={1080}
 				height={1920}
