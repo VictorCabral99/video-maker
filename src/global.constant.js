@@ -4,8 +4,8 @@ import WP from './assets/img/wp/Magcargo.png';
 import img1 from './assets/img/collection/021-022/021.png';
 import img2 from './assets/img/collection/021-022/022.png';
 
-import support1 from './assets/img/support/021-022/079.png';
-import support2 from './assets/img/support/021-022/163.png';
+import support1 from './assets/img/support/021-022/163.png';
+import support2 from './assets/img/support/021-022/079.png';
 import support3 from './assets/img/support/021-022/Coalossal.png';
 import support4 from './assets/img/support/021-022/Ursaluna.png';
 
